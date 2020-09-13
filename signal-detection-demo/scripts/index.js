@@ -15,7 +15,9 @@ class Trial {
     constructor() {
 	this.number = nextTrialNum++;
 	this.results = [];
-	this.remaining = NUM_TRIALS
+	this.remaining = NUM_TRIALS;
+	this.stimulusColour = document.querySelector("#stimulus-colour").value;
+	this.backgroundColour = document.querySelector("#background-colour").value;
     }
     setExpected(value) {
 	this.expected = value;
@@ -92,12 +94,15 @@ function getDuration() {
 function clearCanvas() {
     var size = canvas.height;
 
+    var colour = currentTrial ? currentTrial.backgroundColour :
+	document.querySelector("#background-colour").value;
+
     ctx.beginPath();
     ctx.save();
     ctx.translate(getMargin(), 0);
 
     // Fill background.
-    ctx.fillStyle = document.querySelector("#background-colour").value;
+    ctx.fillStyle = colour;
     ctx.fillRect(0, 0, size, size);
 }
 
@@ -132,7 +137,7 @@ function init() {
     const cancelButton = document.querySelector('#cancel');
     cancelButton.disabled = true;
     cancelButton.addEventListener('click', () => {
-	log("Trial cancelled.");
+	replaceTrialText("Trial cancelled.");
 	log("")
 	endTrial()
     });
@@ -150,8 +155,10 @@ function init() {
 
     setEnabled(".response-buttons > .custom-button", false);
 
-    log("Welcome to the Signal Detection Demo!");
-    log("To begin, pick a set of options above and click 'Start'.")
+    log("<strong>Welcome to the Signal Detection Demo!</strong>");
+    log("To begin, pick a set of options above.");
+    log("Click 'Demo' to test them.");
+    log("When you're happy with your options, click 'Start'.");
     log("");
 }
 
@@ -226,7 +233,8 @@ function interTrial(showSignal) {
 
 function drawSignal(postTrial) {
     const stimulusSize = Number(document.querySelector('#size').value);
-    const stimulusColour = document.querySelector("#stimulus-colour").value;
+    const stimulusColour = currentTrial ? currentTrial.stimulusColour :
+	document.querySelector("#stimulus-colour").value;
     const stimulusDuration = getDuration();
     var range = canvas.height - stimulusSize;
 

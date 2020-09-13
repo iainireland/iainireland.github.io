@@ -55,7 +55,7 @@ canvas {
     color: #ffffff;
     background-color: #4eb5f1;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-    text-align:center;
+    text-align: center;
     transition: all 0.2s;
     border:none;
 }
@@ -76,4 +76,7 @@ canvas {
 .log-text {
     margin-top: 1em;
     font-family: monospace;
+}
+.response-buttons > button {
+    font-size: x-large;
 }
