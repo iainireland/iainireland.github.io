@@ -155,7 +155,7 @@ function init() {
 
     setEnabled(".response-buttons > .custom-button", false);
 
-    log("<strong>Welcome to the Signal Detection Demo!</strong>");
+    log("<strong>Welcome to the Signal Detection Task!</strong>");
     log("To begin, pick a set of options above.");
     log("Click 'Demo' to test them.");
     log("When you're happy with your options, click 'Start'.");
