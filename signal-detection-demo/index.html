@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Iain Ireland">
+    <title>Signal Detection Demo</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="scripts/index.js" defer></script>
+
+  </head>
+  <body>
+    <!-- TODO: responsive design for the layout of these parts? -->
+    <main>
+      <section class="main-section" id="main-section">
+	<canvas id="canvas">Canvas alt-text</canvas>
+	<section class="response-buttons">
+	  <button class="custom-button" id="response-yes" type="button">Yes</button>
+	  <button class="custom-button" id="response-no" type="button">No</button>
+	</section>
+      </section>
+      <aside>
+	<section class="sidebar">
+	  <!-- TODO: preset config options? -->
+	  <label for="stimulus-colour">Stimulus Colour</label>
+	  <input type="color" id="stimulus-colour" name="stimulus-colour"
+		 value="#000000">
+	  <br>
+	  <label for="background-colour">Background Colour</label>
+	  <input type="color" id="background-colour" name="background-colour"
+		 value="#f4f4f9">
+	  <br>
+	  <label for="duration">Duration (ms)</label>
+	  <input type="range" id="duration" name="duration"
+		 min="20" max="100" value = "50" step="10">
+	  <output class="duration-output" for="duration"></output>
+	  <label for="size">Radius</label>
+	  <input type="range" id="size" name="size"
+		 min="1" max="50" value = "10" step="1">
+	  <output class="size-output" for="size"></output>
+	</section>
+        <section class="control-buttons">
+	  <button class="custom-button" id="test">Demo</button>
+	  <button class="custom-button" id="start">Start</button>
+	  <button class="custom-button" id="cancel">Cancel</button>
+	</section>
+	<section id="log-box" class="log-box">
+	  <div id="log-text"></div>
+	</section>
+      </aside>
+    </main>
+  </body>
+</html>
