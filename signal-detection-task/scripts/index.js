@@ -41,7 +41,7 @@ class Trial {
 	    let idx = (result.expected ? 0 : 1) + (correct ? 0 : 2);
 	    counts[idx]++;
 	}
-	var newText = "<strong>Experiment #" + this.number + " Results</strong><br>";
+	var newText = "<strong>Session #" + this.number + " Results</strong><br>";
 	newText += "True positive:  " + counts[0] + "<br>";
 	newText += "True negative:  " + counts[1] + "<br>";
 	newText += "False positive: " + counts[3] + "<br>";
@@ -170,7 +170,7 @@ function startTrial() {
     setEnabled(".sidebar > input", false);
     window.setTimeout(fixationCross, 1000);
 
-    log("<strong>Beginning Experiment #" + currentTrial.number + "</strong>")
+    log("<strong>Beginning Session #" + currentTrial.number + "</strong>")
     log("Stimulus Colour: " + document.querySelector("#stimulus-colour").value);
     log("Background Colour: " + document.querySelector("#background-colour").value);
     log("Stimulus Duration: " + getDuration() + "ms");
