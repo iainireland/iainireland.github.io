@@ -80,3 +80,8 @@ canvas {
 .response-buttons > button {
     font-size: x-large;
 }
+footer {
+    position: absolute;
+    align-items: left;
+    bottom: 0px;
+}
