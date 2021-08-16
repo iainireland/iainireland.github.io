@@ -42,10 +42,10 @@ class Trial {
 	    counts[idx]++;
 	}
 	var newText = "<strong>Session #" + this.number + " Results</strong><br>";
-	newText += "True positive:  " + counts[0] + "<br>";
-	newText += "True negative:  " + counts[1] + "<br>";
+	newText += "Hit:  " + counts[0] + "<br>";
+	newText += "Correct rejection:  " + counts[1] + "<br>";
 	newText += "False positive: " + counts[3] + "<br>";
-	newText += "False negative: " + counts[2] + "<br>";
+	newText += "Miss: " + counts[2] + "<br>";
 
 	replaceTrialText(newText);
 	log("");
