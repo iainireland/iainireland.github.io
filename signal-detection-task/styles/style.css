@@ -73,6 +73,9 @@ canvas {
     padding: 0.5em 0.5em;
     overflow: scroll;
 }
+.log-box td {
+    padding: 0 0.5em 0 0;
+}
 .log-text {
     margin-top: 1em;
     font-family: monospace;
